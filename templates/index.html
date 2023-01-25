@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>VnStat WebUI</title>
+        <meta name="description" content="">
+        <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="/vnstat-dashboard/static/css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Secular+One&family=Anton&family=Oswald&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>{{server_name}} - Network Traffic Stats</h1>
+        <p id="info">Info last Updated on: {{last_updated}}</p>
+        <div id="float">     
+        <div id="day" class="stats">
+            <h2 class="heading">Today's Usage</h2>
+            <div id="todaydl" class="statbox">
+                <img src="/vnstat-dashboard/static/down.png" alt="Download Icon">
+                <p id="data">{{td_vrx}} GB</p>
+                <p id="datainfo" class="dl">Downloaded</p>
+            </div>
+            <div id="todayul" class="statbox">
+                <img src="/vnstat-dashboard/static/up.png" alt="Upload Icon">
+                <p id="data">{{td_vtx}} GB</p>
+                <p id="datainfo" class="ul">Uploaded</p>
+            </div>
+            <div id="todaytl" class="statbox">
+                <img src="/vnstat-dashboard/static/up-and-down.png" alt="Total Icon">
+                <p id="data">{{td_total}} GB</p>
+                <p id="datainfo" class="tl">Total</p>
+            </div>
+        </div>    
+        <div id="month" class="stats">
+            <h2 class="heading">This Month's Usage</h2>
+            <div id="monthdl" class="statbox">
+                <img src="/vnstat-dashboard/static/down.png" alt="Download Icon">
+                <p id="data">{{tm_vrx}} GB</p>
+                <p id="datainfo" class="dl">Downloaded</p>
+            </div>
+            <div id="monthul" class="statbox">
+                <img src="/vnstat-dashboard/static/up.png" alt="Upload Icon">
+                <p id="data">{{tm_vtx}} GB</p>
+                <p id="datainfo" class="ul">Uploaded</p>
+            </div>
+            <div id="monthtl" class="statbox">
+                <img src="/vnstat-dashboard/static/up-and-down.png" alt="Total Icon">
+                <p id="data">{{tm_total}} GB</p>
+                <p id="datainfo" class="tl">Total</p>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

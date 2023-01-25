@@ -1,0 +1,85 @@
+* {
+    background-color: #1f1f1f;
+    color: whitesmoke;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Secular One', sans-serif;
+    font-size: 45px;
+    /* text-shadow: 2px 2px gray; */
+    margin-bottom: 5px;
+}
+
+#info {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.heading {
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 35px;
+    text-shadow: 1px 1px grey;
+    text-align: center;
+    margin: 10px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-decoration: underline grey 1px;
+    text-underline-offset: 0.5em;
+}
+
+.stats {
+    text-align: center;
+    padding-bottom: 30px;
+    float: left;
+}
+
+.statbox {
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+    margin: 10px;
+    height: 220px;
+    width: 220px;
+    background: black;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    background: black;
+}
+
+#data {
+    font-family: 'Anton', sans-serif;
+    background: black;
+    font-size: 20px;
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 8px;
+}
+#datainfo {
+    font-family: 'Oswald', sans-serif;
+    background: black;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.dl {
+    color: skyblue;
+}
+.ul {
+    color: #de8c45;
+}
+.tl {
+    color: brown;
+}
