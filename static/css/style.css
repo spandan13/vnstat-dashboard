@@ -7,7 +7,6 @@ h1 {
     text-align: center;
     font-family: 'Secular One', sans-serif;
     font-size: 45px;
-    /* text-shadow: 2px 2px gray; */
     margin-bottom: 5px;
 }
 
@@ -27,15 +26,18 @@ h1 {
     text-align: center;
     margin: 10px;
     padding-top: 30px;
-    padding-bottom: 10px;
+    padding-bottom: 25px;
     text-decoration: underline grey 1px;
     text-underline-offset: 0.5em;
 }
 
-.stats {
+#float {
     text-align: center;
+}
+
+.stats {
+    display: inline-block;
     padding-bottom: 30px;
-    float: left;
 }
 
 .statbox {
@@ -82,4 +84,21 @@ img {
 }
 .tl {
     color: brown;
+}
+
+.charts {
+    margin: auto;
+    text-align: center
+}
+
+canvas {
+    background-color: black;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#chart {
+    padding: 10px;
+    display: inline-block;
+    margin: auto;
 }
