@@ -58,6 +58,7 @@
         <h2 class="heading">Historical Stats</h2>
         <div id="chart"><canvas id="dailychart" width="300" height="300"></canvas></div>
         <div id="chart"><canvas id="monthlychart" width="300" height="300"></canvas></div>
+        <div id="chart"><canvas id="topchart" width="300" height="300"></canvas></div>
     </div>
     <script>
         var ctx = document.getElementById("dailychart").getContext("2d");
@@ -109,6 +110,32 @@
                 title: {
                     display: true,
                     text: "Monthly Usage in GBs"
+                },
+            }
+        });
+        var ctx = document.getElementById("topchart").getContext("2d");
+        var dailychart = new Chart(ctx, {
+            type: "bar",
+            data: {
+                labels: {{ t_dates | safe }},
+                datasets: [
+                    {
+                        label: "Download",
+                        backgroundColor:"rgba(247, 150, 40, 1)",
+                        data: {{ t_vrx | safe }}
+                    },
+                    {
+                        label: "Upload",
+                        backgroundColor:"rgba(22, 150, 247, 1)",
+                        data: {{ t_vtx | safe }}
+                    }
+                ]
+            },
+            options: {
+                responsive: false,
+                title: {
+                    display: true,
+                    text: "Top Usage in GBs"
                 },
             }
         });

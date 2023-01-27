@@ -19,6 +19,11 @@ def getMonthly():
     monthly_traffic = raw_month_data['interfaces'][0]['traffic']['month']
     return monthly_traffic
 
+def getTop():
+    raw_top_data = json.loads(subprocess.getoutput("vnstat --json t 5 -i eth0"))
+    top_traffic = raw_top_data['interfaces'][0]['traffic']['top']
+    return top_traffic
+
 def parseDateTime(raw_date,raw_time=""):
     try:
         date = (f"{raw_date['day']:02d}/{raw_date['month']:02d}/{raw_date['year']}")
@@ -60,12 +65,15 @@ app = Flask(__name__)
 def index():
     monthly_traffic = getMonthly()
     daily_traffic,last_updated = getDaily()
+    top_traffic = getTop()
     
     hd_dates,hd_vrx,hd_vtx,hd_total=getHist(daily_traffic) # hd stands for Historical Daily, td is This Day
     hm_dates,hm_vrx,hm_vtx,hm_total=getHist(monthly_traffic) # hm stands for Historical Monthly, tm is This Month
+    t_dates,t_vrx,t_vtx,t_total=getHist(top_traffic) # t stands for Top
     return render_template("index.html",last_updated=last_updated,server_name=server_name,
                            hd_dates=hd_dates,hd_vrx=hd_vrx,hd_vtx=hd_vtx,hd_total=hd_total,
                            hm_dates=hm_dates,hm_vrx=hm_vrx,hm_vtx=hm_vtx,hm_total=hm_total,
+                           t_dates=t_dates,t_vrx=t_vrx,t_vtx=t_vtx,t_total=t_total,
                            td_vrx=hd_vrx[-1],td_vtx=hd_vtx[-1],td_total=hd_total[-1],
                            tm_vrx=hm_vrx[-1],tm_vtx=hm_vtx[-1],tm_total=hm_total[-1])
     
