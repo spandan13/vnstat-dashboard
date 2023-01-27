@@ -1,6 +1,6 @@
 # vnstat-dashboard
 ### A simple WebUI that shows stats pulled from the vnstat cli tool.
-<img src="https://i.imgur.com/3SoENoH.png" alt="dashboard"></a>
+<img src="https://i.imgur.com/m4N2Ade.png" alt="dashboard"></a>
 <br>
 
 # *Requirements:*
